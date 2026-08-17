@@ -201,14 +201,8 @@ h3,.productBody h3,.trust h2,.drawerHeader h2,.quickContent h2{font-weight:700;l
   .heroActions{margin-top:10px}.heroActions a{min-height:38px}.heroDots{bottom:10px}
 }
 
-/* Compact mobile hero and overflow-safe cart assurances */
+/* Overflow-safe cart assurances */
 @media(max-width:760px){
-  .hero{height:min(50svh,450px);min-height:0;max-height:450px}
-  .heroContent{bottom:34px;max-height:calc(100% - 54px)}
-  .heroContent h1{font-size:clamp(1.85rem,8.8vw,2.65rem);margin-bottom:8px}
-  .heroContent>p:not(.eyebrow){font-size:.75rem;line-height:1.35;-webkit-line-clamp:2}
-  .heroActions{margin-top:11px;gap:6px}.heroActions a{min-height:37px;padding-block:6px}
-  .heroDots{bottom:9px}.heroPrev,.heroNext{top:10px;width:32px;height:32px}
   .cartSummary .trustBadges.compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;width:100%;margin:12px 0}
   .cartSummary .trustBadges.compact .trustBadge{min-width:0;width:100%;gap:6px;padding:8px 7px;overflow:hidden}
   .cartSummary .trustBadges.compact .trustBadge>span{width:27px;height:27px;flex:0 0 27px}
@@ -217,11 +211,6 @@ h3,.productBody h3,.trust h2,.drawerHeader h2,.quickContent h2{font-weight:700;l
 }
 @media(max-width:359px){
   .cartSummary .trustBadges.compact{grid-template-columns:1fr}
-}
-@media(max-width:760px) and (max-height:620px){
-  .hero{height:50svh;max-height:310px}.heroContent{bottom:28px;max-height:calc(100% - 42px)}
-  .heroContent h1{font-size:1.75rem}.heroContent>p:not(.eyebrow){display:none}.heroActions{margin-top:8px}.heroActions a{min-height:34px}
-  .heroDots{bottom:6px}
 }
 
 /* Shopify-style fixed mobile promotional banner */
