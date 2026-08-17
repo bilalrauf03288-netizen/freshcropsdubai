@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Local environment and deployment state
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Tests, logs and editor files
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Retired inventory assets (not referenced by the storefront)
+/public/images/category-meat-10.webp
+/public/images/product-premium-boneless-chicken-breast-53.webp
