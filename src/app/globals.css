@@ -214,7 +214,7 @@ h3,.productBody h3,.trust h2,.drawerHeader h2,.quickContent h2{font-weight:700;l
 }
 
 /* Shopify-style fixed mobile promotional banner */
-.categoryAnchors{position:relative;height:0;scroll-margin-top:112px}.categoryAnchors>span{position:absolute;inset:0;scroll-margin-top:112px}
+.catalogResults{scroll-margin-top:112px}
 @media(max-width:768px){
   .hero{width:100%;height:340px;min-height:340px;max-height:350px;aspect-ratio:auto}
   .heroSlide>img{object-fit:cover;object-position:center 42%}
