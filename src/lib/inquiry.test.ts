@@ -15,10 +15,12 @@ describe("WhatsApp inquiry", () => {
     expect(buildWhatsAppUrl("+971 58 127 3079", "Order test")).toBe("https://wa.me/971581273079?text=Order%20test");
   });
   it("includes customer shipping details in checkout dispatch", () => {
-    const message = buildCheckoutMessage([{ productId: "carrot", quantity: 2 }], products, { name: "Sara", phone: "+971500000000", address: "Dubai Marina", notes: "Evening" });
+    const message = buildCheckoutMessage([{ productId: "carrot", quantity: 2 }], products, { name: "Sara", phone: "+971500000000", address: "Dubai Marina", notes: "Evening" }, { orderId: "FC-20260818-A1B2C3D4", trackingUrl: "https://freshcropsdubai.vercel.app/track?id=FC-20260818-A1B2C3D4" });
     expect(message).toContain("Name: Sara");
     expect(message).toContain("Shipping address: Dubai Marina");
     expect(message).toContain("Carrot");
     expect(message).toContain("Total: AED 9.50");
+    expect(message).toContain("Order ID: FC-20260818-A1B2C3D4");
+    expect(message).toContain("Track order: https://freshcropsdubai.vercel.app/track?id=FC-20260818-A1B2C3D4");
   });
 });

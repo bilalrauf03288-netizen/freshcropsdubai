@@ -26,9 +26,10 @@ export function buildWhatsAppOrder(items: CartItem[], products: Product[]) {
 export const buildWhatsAppUrl = (number: string, message: string) =>
   `https://wa.me/${number.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
 
-export function buildCheckoutMessage(items: CartItem[], products: Product[], customer: CustomerShipping) {
+export function buildCheckoutMessage(items: CartItem[], products: Product[], customer: CustomerShipping, tracking?: { orderId: string; trackingUrl: string }) {
   return [
     "*FreshCrops Confirmed Order Request*", "",
+    ...(tracking ? ["*Order Tracking*", `Order ID: ${tracking.orderId}`, `Track order: ${tracking.trackingUrl}`, ""] : []),
     "*Customer & Delivery Details*",
     `Name: ${customer.name.trim()}`,
     `Phone: ${customer.phone.trim()}`,
