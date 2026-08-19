@@ -15,6 +15,7 @@ type CartContextValue = {
   removeItem: (productId: string) => void;
   setQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
+  getQuantity: (productId: string) => number;
 };
 const CartContext = createContext<CartContextValue | null>(null);
 
@@ -46,6 +47,7 @@ export function CartProvider({ products, children }: { products: Product[]; chil
     removeItem: (productId) => setItems((current) => current.filter((item) => item.productId !== productId)),
     setQuantity: (productId, quantity) => setItems((current) => setCartQuantity(current, productId, quantity)),
     clearCart: () => setItems([]),
+    getQuantity: (productId) => items.find((item) => item.productId === productId)?.quantity ?? 0,
   }), [items, isOpen, products]);
   return <CartContext.Provider value={value}>{children}{toast && <div className="cartToast" role="status" aria-live="polite"><span aria-hidden>✓</span><div><strong>Added successfully</strong><p>{toast}</p></div><button onClick={() => setOpen(true)}>View cart</button></div>}</CartContext.Provider>;
 }
